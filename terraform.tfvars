@@ -44,3 +44,4 @@ crio_os_version = "xUbuntu_20.04"
 # }
 resources_path = "../terraform-azurerm-aks_cluster/resources"
 helm_version = "3.8.2"
+vpc_netmask_length = 24
