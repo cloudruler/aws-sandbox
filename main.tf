@@ -1,0 +1,31 @@
+module "aws_k8s" {
+  source = "../terraform-aws-k8s"
+  #source                                   = "app.terraform.io/cloudruler/k8s/aws"
+  #version                                 = ">= 0.0.1"
+  landing_zone_name                        = local.landing_zone_name
+  #resource_group_name                      = azurerm_resource_group.rg.name
+  #location                                 = var.location
+  #admin_username                           = var.admin_username
+  #connectivity_resource_group_name         = var.connectivity_resource_group_name
+  #identity_resource_group_name             = var.identity_resource_group_name
+  #key_vault_name                           = var.key_vault_name
+  certificate_names                        = var.certificate_names
+  ssh_public_key                           = var.ssh_public_key
+  cluster_public_ip                        = var.cluster_public_ip
+  master_nodes_config                      = var.master_nodes_config
+  worker_nodes_config                      = var.worker_nodes_config
+  #vnet_cidr                                = var.vnet_cidr
+  #subnet_cidr                              = var.subnet_cidr
+  vpc_netmask_length                       = var.vpc_netmask_length
+  pods_cidr                                = var.pods_cidr
+  bootstrap_token_secret_name              = var.bootstrap_token_secret_name
+  discovery_token_ca_cert_hash_secret_name = var.discovery_token_ca_cert_hash_secret_name
+  api_server_name                          = var.api_server_name
+  k8s_service_subnet                       = var.k8s_service_subnet
+  cluster_dns                              = var.cluster_dns
+  crio_version                             = var.crio_version
+  crio_os_version                          = var.crio_os_version
+  #vm_image_publisher                       = var.vm_image_publisher
+  resources_path                           = var.resources_path
+  helm_version                             = var.helm_version
+}
