@@ -1,24 +1,22 @@
-
-
 variable "location" {
   type = string
 }
 
-# variable "admin_username" {
-#   type = string
-# }
+variable "admin_username" {
+  type = string
+}
 
 # variable "connectivity_resource_group_name" {
 #   type = string
 # }
 
-# variable "identity_resource_group_name" {
-#   type = string
-# }
+variable "identity_resource_group_name" {
+  type = string
+}
 
-# variable "key_vault_name" {
-#   type = string
-# }
+variable "key_vault_name" {
+  type = string
+}
 
 variable "certificate_names" {
   type = set(string)
@@ -33,13 +31,11 @@ variable "cluster_public_ip" {
 }
 
 variable "master_nodes_config" {
-  type = list(object({
-  }))
+  type = map(any)
 }
 
 variable "worker_nodes_config" {
-  type = list(object({
-  }))
+  type = map(any)
 }
 
 # variable "vnet_cidr" {
@@ -101,4 +97,16 @@ variable "resources_path" {
 
 variable "helm_version" {
   type = string
+}
+
+variable "key_pair_name" {
+  type = string
+}
+
+variable "private_subnet_netmask_length" {
+  type = number
+}
+
+variable "public_subnet_netmask_length" {
+  type = number
 }

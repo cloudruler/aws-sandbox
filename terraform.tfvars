@@ -13,17 +13,17 @@ k8s_service_subnet = "10.0.3.0/27"
 #IP of the DNS service for the cluster
 cluster_dns = "10.0.3.10"
 #Configuration for the k8s master nodes
-master_nodes_config = [{}]
+master_nodes_config = { "prime" : {} }
 #Configuration for the k8s worker nodes
-worker_nodes_config = [{}, {}]
+worker_nodes_config = { "1" : {} }
 #Resource group for identities, keys, secrets, and certificates
-#identity_resource_group_name = "rg-identity"
+identity_resource_group_name = "rg-identity"
 #Name of the SSH Public Key resource
 ssh_public_key = "ssh-cloudruler"
 #Name of the public IP to assign to the cluster
 cluster_public_ip = "pip-k8s"
 #Name of the Key Vault which stores certificates, the discovery CA hash, and the bootstrap token
-#key_vault_name = "cloudruler"
+key_vault_name = "cloudruler"
 #A list of Key Vault certificates to inject into the VM
 certificate_names = ["ca-kubernetes", "ca-kubernetes-front-proxy", "ca-etcd", "ca-certificate-manager"]
 #Name of the bootstrap token secret in Key Vault
@@ -33,7 +33,7 @@ discovery_token_ca_cert_hash_secret_name = "k8s-discovery-token-ca-cert-hash"
 #The name to reach the api server like k8s.cloudruler.io
 api_server_name = "k8s.cloudruler.com"
 #Username of the admin user
-#admin_username  = "cloudruleradmin"
+admin_username  = "cloudruleradmin"
 crio_version    = "1.23"
 crio_os_version = "xUbuntu_20.04"
 # vm_image_publisher = {
@@ -42,6 +42,9 @@ crio_os_version = "xUbuntu_20.04"
 #   sku       = "20_04-lts-gen2"
 #   version   = "latest"
 # }
-resources_path = "../terraform-azurerm-aks_cluster/resources"
-helm_version = "3.8.2"
+resources_path     = "../terraform-aws-k8s/resources"
+helm_version       = "3.8.2"
 vpc_netmask_length = 24
+key_pair_name      = "brianmoore"
+private_subnet_netmask_length = 26
+public_subnet_netmask_length = 26
